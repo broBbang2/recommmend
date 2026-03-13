@@ -8,9 +8,9 @@ export default function BeginnerPicks() {
   return (
     <section>
       <SectionTitle title="입문자 추천" />
-      <div className="grid gap-4 md:grid-clos-2 xl:grid-clos-3">
-        {beginnerDrinks.map((drinks) => (
-          <DrinkCard key={drinks.id} drink={drinks} />
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        {beginnerDrinks.map((drink) => (
+          <DrinkCard key={drink.id} drink={drink} />
         ))}
       </div>
     </section>

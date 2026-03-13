@@ -8,13 +8,13 @@ interface FavoriteVuttonProps {
 }
 
 export default function FavoriteButton({ id }: FavoriteVuttonProps) {
-  const toggleFavortie = useFavoriteStore((state) => state.toggleFavorite);
+  const toggleFavorite = useFavoriteStore((state) => state.toggleFavorite);
   const isFavorite = useFavoriteStore((state) => state.isFavorite(id));
 
   return (
     <button
       type="button"
-      onClick={() => toggleFavortie(id)}
+      onClick={() => toggleFavorite(id)}
       className="rounded-full border p-2"
       aria-label="즐겨찾기 토글"
     >

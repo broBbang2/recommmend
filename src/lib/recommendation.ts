@@ -26,7 +26,7 @@ export function calculateDrinkScore(drink: Drink, answers: UserAnswers) {
   return score;
 }
 
-export function getRecommendFrinks(drinks: Drink[], answers: UserAnswers) {
+export function getRecommendedDrinks(drinks: Drink[], answers: UserAnswers) {
   return [...drinks]
     .map((drink) => ({
       ...drink,
