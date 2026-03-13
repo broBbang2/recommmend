@@ -1,9 +1,13 @@
 import { create } from "zustand";
 import { UserAnswers } from "@/types/recommendation";
 
-interface RecommendationsState {
+interface RecommendationState {
   answers: Partial<UserAnswers>;
-  serAnswer: <K extends keyof UserAnswers>(key: K, value: UserAnswers[k]) => void;
+  setAnswer: <K extends keyof UserAnswers>(
+    key: K,
+    value: UserAnswers[K],
+  ) => void;
+  resetAnswers: () => void;
 }
 
 export const useRecommendationStore = create<RecommendationState>((set) => ({
@@ -12,8 +16,8 @@ export const useRecommendationStore = create<RecommendationState>((set) => ({
     set((state) => ({
       answers: {
         ...state.answers,
-        [key]: value
-      }
+        [key]: value,
+      },
     })),
-  resetAnswers: () => set({ answers: {} })
+  resetAnswers: () => set({ answers: {} }),
 }));
